@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="bean clicker.css">
+        <Title>bean clicker</Title>
+        <link rel="icon" type="image/x-icon" href="C:\Test website images\bean.png">
+    </head>
+    <body>
+        <h2>Bean clicker</h2>
+        <script>
+            setInterval(plTimer, 10000);
+            setInterval(frTimer, 3000);
+            setInterval(ftTimer, 200);
+            var beans = 0;
+            var plant = 0;
+            var farm = 0;
+            var factory = 0;
+            var cost = 100;
+            var clicker = 1;
+            var cost2 = 100;
+            var cost3 = 1000;
+            var cost4 = 10000;
+            function onClick() {
+                beans += clicker;
+                document.getElementById("bean").innerHTML = beans;
+            };
+            function noClick() {
+                if(beans >= cost){
+                    beans -= cost;
+                    cost *= 2;
+                    clicker++;
+                    document.getElementById("cost").innerHTML = cost;
+                    document.getElementById("clicker").innerHTML = clicker;
+                    document.getElementById("bean").innerHTML = beans;
+                }
+            }
+            function goDebt() {
+                beans = -100000000;
+                plant = 0;
+                farm = 0;
+                factory = 0;
+                cost = 100;
+                cost2 = 100;
+                cost3 = 1000;
+                cost4 = 10000;
+                clicker = 1;
+                document.getElementById("bean").innerHTML = beans;
+                document.getElementById("plant").innerHTML = plant;
+                document.getElementById("farm").innerHTML = farm;
+                document.getElementById("factory").innerHTML = factory;
+                document.getElementById("cost").innerHTML = cost;
+                document.getElementById("cost2").innerHTML = cost2;
+                document.getElementById("cost3").innerHTML = cost3;
+                document.getElementById("cost4").innerHTML = cost4;
+                document.getElementById("clicker").innerHTML = clicker;
+            }
+            <!--bean producers-->
+            function beanPlant() { 
+                if(beans >= cost2){
+                    beans -= cost2.toFixed(0);
+                    cost2 *= 1.25;
+                    plant++;
+                    document.getElementById("cost2").innerHTML = cost2;
+                    document.getElementById("plant").innerHTML = plant;
+                    document.getElementById("bean").innerHTML = beans;
+                }
+            document.getElementById("cost2").innerHTML = 
+            cost2.toFixed(0)
+            }
+            function beanFarm() { 
+                if(beans >= cost3){
+                    beans -= cost3.toFixed(0);
+                    cost3 *= 1.25;
+                    farm++;
+                    document.getElementById("cost3").innerHTML = cost3;
+                    document.getElementById("farm").innerHTML = farm;
+                    document.getElementById("bean").innerHTML = beans;
+                }
+            document.getElementById("cost3").innerHTML = 
+            cost3.toFixed(0)
+            }
+            function beanFactory() { 
+                if(beans >= cost4){
+                    beans -= cost4.toFixed(0);
+                    cost4 *= 1.25;
+                    factory++;
+                    document.getElementById("cost4").innerHTML = cost4;
+                    document.getElementById("factory").innerHTML = factory;
+                    document.getElementById("bean").innerHTML = beans;
+                    }
+            document.getElementById("cost4").innerHTML = 
+            cost4.toFixed(0)
+            }
+            function deBug() {
+                beans = 1000000000;
+                plant = 10000
+                farm = 100000
+                factory = 100000000
+                clicker = 500
+                document.getElementById("bean").innerHTML = beans;
+                document.getElementById("plant").innerHTML = plant;
+                document.getElementById("farm").innerHTML = farm;
+                document.getElementById("factory").innerHTML = factory;
+                document.getElementById("clicker").innerHTML = clicker;
+            }
+            function plTimer() {
+                if (plant > 0){
+                    beans += plant;
+                    document.getElementById("bean").innerHTML = beans;
+                    document.getElementById("plant").innerHTML = plant;
+                } 
+            }
+            function frTimer() {
+                if (farm > 0){
+                    beans += farm;
+                    document.getElementById("bean").innerHTML = beans;
+                    document.getElementById("farm").innerHTML = farm;
+                }
+            }
+            function ftTimer() {
+                if (factory > 0){
+                    beans += factory;
+                    document.getElementById("bean").innerHTML = beans;
+                    document.getElementById("factory").innerHTML = factory;
+                }
+            }
+        </script>
+        <button title="Click for beans" type="button" onClick="onClick()"><img src="C:\Test website images\bean.png" alt="bean" style="width: 100px;"></button>
+        <p>Beans: <a id="bean">0</a></p>
+        <p>Clicker: <a id="clicker">1</a></p>
+        <p>Bean plants: <a id="plant">0</a></p>
+        <p>Bean farms: <a id="farm">0</a></p>
+        <p>Bean factories: <a id="factory">0</a></p>
+        <img title="Bean store" src="C:\Test website images\bean store.png" alt="beanstore" style="width: 110px; margin-left: 9.75%;">
+        <p>Clicker cost: <a id="cost">100</a></p> 
+        <p>Plant cost: <a id="cost2">100</a></p>
+        <p>Farm cost: <a id="cost3">1000</a></p>
+        <button title="upgrades the amount of beans per click" type="button" onClick="noClick()"><img src="C:\Test website images\clicker upgrade.png" alt="Clicker upgrade" style="width: 100px;"></button>
+        <button title="gives you 1 bean per 10 seconds" type="button" onClick="beanPlant()"><img src="C:\Test website images\plant upgrade.png" alt="Plant upgrade" style="width: 100px;"></button>
+        <button title="gives you 1 bean per 3 seconds" type="button" onClick="beanFarm()"><img src="C:\Test website images\bean farm.png" alt="Farm upgrade" style="width: 100px;"></button>
+        <br>
+        <p>Factory cost: <a id="cost4">10000</a></p>
+        <button title="gives you 5 beans per second" type="button" onClick="beanFactory()"><img src="C:\Test website images\Bean Factory.png" alt="Factory upgrade" style="width: 100px;"></button>
+        <button title="go into debt" type="button" onClick="goDebt()"><img src="C:\Test website images\debt.png" alt="debt" style="width: 100px;"></button>
+        <br>
+        <button title="debug" type="button" onClick="deBug()">debug</button>
+    </body>
