@@ -11,7 +11,7 @@
         <script>
             setInterval(plTimer, 10000);
             setInterval(frTimer, 3000);
-            setInterval(ftTimer, 200);
+            setInterval(ftTimer, 500);
             var beans = 0;
             var plant = 0;
             var farm = 0;
@@ -19,8 +19,8 @@
             var cost = 100;
             var clicker = 1;
             var cost2 = 100;
-            var cost3 = 1000;
-            var cost4 = 10000;
+            var cost3 = 500;
+            var cost4 = 50000;
             function onClick() {
                 beans += clicker;
                 document.getElementById("bean").innerHTML = beans;
@@ -135,13 +135,13 @@
         <img title="Bean store" src="bean store.png" alt="beanstore" style="width: 110px; margin-left: 9.75%;">
         <p>Clicker cost: <a id="cost">100</a></p> 
         <p>Plant cost: <a id="cost2">100</a></p>
-        <p>Farm cost: <a id="cost3">1000</a></p>
+        <p>Farm cost: <a id="cost3">500</a></p>
         <button title="upgrades the amount of beans per click" type="button" onClick="noClick()"><img src="clicker upgrade.png" alt="Clicker upgrade" style="width: 100px;"></button>
         <button title="gives you 1 bean per 10 seconds" type="button" onClick="beanPlant()"><img src="plant upgrade.png" alt="Plant upgrade" style="width: 100px;"></button>
         <button title="gives you 1 bean per 3 seconds" type="button" onClick="beanFarm()"><img src="bean farm.png" alt="Farm upgrade" style="width: 100px;"></button>
         <br>
-        <p>Factory cost: <a id="cost4">10000</a></p>
-        <button title="gives you 5 beans per second" type="button" onClick="beanFactory()"><img src="Bean Factory.png" alt="Factory upgrade" style="width: 100px;"></button>
+        <p>Factory cost: <a id="cost4">5000</a></p>
+        <button title="gives you 2 beans per second" type="button" onClick="beanFactory()"><img src="Bean Factory.png" alt="Factory upgrade" style="width: 100px;"></button>
         <button title="go into debt" type="button" onClick="goDebt()"><img src="debt.png" alt="debt" style="width: 100px;"></button>
         <br>
         <button title="debug" type="button" onClick="deBug()">debug</button>
