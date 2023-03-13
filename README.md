@@ -1,0 +1,1 @@
+To play Bean clicker you go down to the bottom right and find the tab called Enviroments then click on github pages, afterward click view deployment and you are in, save the link if you would like and have fun!
