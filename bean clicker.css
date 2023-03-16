@@ -24,6 +24,7 @@ p {
 }
 button {
     background-color: black;
+    border: none;
 }
 button:hover {
     opacity: 0.5;
